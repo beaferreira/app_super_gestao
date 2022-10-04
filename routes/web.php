@@ -31,3 +31,9 @@ Route::get('/sobrenos', [SobreNosController::class, 'sobrenos']);
 use App\Http\Controllers\ContatoController;
  
 Route::get('/contato', [ContatoController::class, 'contato']);
+
+Route::get('/contato/{nome}/{y}/', function(string $nome) {
+    echo 'Estamos aqui: '.$nome;
+});
+
+
