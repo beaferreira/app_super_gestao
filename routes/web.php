@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,23 +20,23 @@ Route::get('/', function () {
 */
 
 use App\Http\Controllers\PrincipalController;
- 
+
 Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
 
 use App\Http\Controllers\SobreNosController;
  
-Route::get('/sobrenos', [SobreNosController::class, 'sobrenos'])->name('site.sobrenos');
+Route::get('/sobrenos', [SobrenosController::class, 'sobrenos'])->name('site.sobrenos');
 
 use App\Http\Controllers\ContatoController;
  
-Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');;
 
 Route::get('/login', function(){return 'Login';})->name('site.login');
 
-Route::prefix('/app')->group(function() {
+Route::prefix('app')->group(function () {
+    Route::get('/users', function () {
     Route::get('/clientes', function(){return 'Clientes';})->name('app.clientes');
     Route::get('/fornecedores', function(){return 'Fornecedores';})->name('app.fornecedores');
     Route::get('/produtos', function(){return 'Produtos';})->name('app.produtos');
-
+    });
 });
-
