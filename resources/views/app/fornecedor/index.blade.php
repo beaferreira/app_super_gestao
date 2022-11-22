@@ -3,9 +3,15 @@
 {{-- comentário --}}
 
 @php
-    // uma linha
-    /* multiplas linhas
-    */
+/*
+   if(){
+    
+   } elseif() {
+   
+   } else() {
 
-    echo 'teste';
+   }
+   */
 @endphp
+
+@dd($fornecedores)
